@@ -1,5 +1,3 @@
-import React from 'react';
+import { ProductList } from '../../../entities/product-list';
 
-export const ProductsScreen = () => {
-  return <div>Products</div>;
-};
+export const ProductsScreen = () => <ProductList />;
