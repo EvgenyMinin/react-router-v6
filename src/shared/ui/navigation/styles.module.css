@@ -1,5 +1,8 @@
 .container {
   margin-bottom: 16px;
+  height: 100%;
+  border-bottom: 1px solid gray;
+  padding: 16px 0;
 }
 
 .container a {

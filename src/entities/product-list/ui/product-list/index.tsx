@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { listProducts } from '../api/getProducts';
-import { Products } from '../lib';
-import { ProductCard } from './product-card';
+import { Loader } from '../../../../shared';
+
+import { listProducts } from '../../api';
+import { Products } from '../../lib';
+import { ProductCard } from '../product-card';
 
 export const ProductList = () => {
-  const [products, setProsucts] = useState<Products>(null);
+  const [products, setProducts] = useState<Products>(null);
 
   useEffect(() => {
     (async () => {
       const data = await listProducts();
-      setProsucts(data);
+      setProducts(data);
     })();
   }, []);
 
   if (!products) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (!products.length) {
@@ -23,10 +25,10 @@ export const ProductList = () => {
   }
 
   return (
-    <>
+    <div>
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-    </>
+    </div>
   );
 };

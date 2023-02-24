@@ -1,3 +1,7 @@
-import { ProductList } from '../../../entities/product-list';
+import { Outlet } from 'react-router';
 
-export const ProductsScreen = () => <ProductList />;
+export const ProductsScreen = () => (
+  <div>
+    <Outlet />
+  </div>
+);
