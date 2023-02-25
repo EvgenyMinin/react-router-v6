@@ -6,6 +6,8 @@ import { Loader } from '../../../../shared';
 import { retrieveProduct } from '../../api';
 import { Product } from '../../lib';
 
+import styles from './styles.module.css';
+
 export const ProductItem = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,11 +21,15 @@ export const ProductItem = () => {
           setProduct(product);
         } catch (error) {
           console.warn(error);
-          navigate('/');
+          navigate('/', { replace: true });
         }
       })();
     }
   }, [id]);
+
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   if (!product) {
     return <Loader />;
@@ -34,6 +40,9 @@ export const ProductItem = () => {
       <h2>{product.name}</h2>
       <p>{`$${product.price / 100}`}</p>
       <p>{product.description}</p>
+      <button className={styles.buttonBack} onClick={handleBack}>
+        Back
+      </button>
     </div>
   );
 };

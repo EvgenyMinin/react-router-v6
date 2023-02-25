@@ -5,8 +5,6 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { ProductItem, ProductList } from '../entities/product-list';
-
 import { Navigation } from '../shared';
 
 import { AdminScreen } from './admin';
@@ -18,10 +16,7 @@ export const Routing = () => {
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/" element={<ProductsScreen />}>
-          <Route path="/" element={<ProductList />} />
-          <Route path=":id" element={<ProductItem />} />
-        </Route>
+        <Route path="/*" element={<ProductsScreen />} />
         <Route path="/admin" element={<AdminScreen />} />
         <Route path="*" element={<NotFoundScreen />} />
       </Routes>
