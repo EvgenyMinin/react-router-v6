@@ -64,7 +64,6 @@ export const ProductEdit: FC<OwnProps> = ({ isEdit }) => {
     try {
       e.preventDefault();
       const { id } = await createProduct(form);
-      console.log('id', id);
       navigate(`/admin/${id}`);
     } catch (error) {
       console.warn(error);
