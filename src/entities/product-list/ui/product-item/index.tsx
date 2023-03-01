@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
-import { Loader } from '../../../../shared';
+import { Loader, Product } from '../../../../shared';
 
 import { retrieveProduct } from '../../api';
-import { Product } from '../../lib';
 
 import styles from './styles.module.css';
 

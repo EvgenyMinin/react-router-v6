@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { Loader } from '../../../../shared';
+import { Loader, Products } from '../../../../shared';
 
 import { listProducts } from '../../api';
-import { Products } from '../../lib';
 import { ProductCard } from '../product-card';
 
 export const ProductList = () => {

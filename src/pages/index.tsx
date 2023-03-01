@@ -15,9 +15,9 @@ export const Routing = () => {
       <Routes>
         <Route path={`${home}*`} element={<ProductsScreen />} />
         <Route
-          path={admin}
+          path={`${admin}/*`}
           element={
-            <ProtectedRoute isAllowed={false}>
+            <ProtectedRoute isAllowed={true}>
               <AdminScreen />
             </ProtectedRoute>
           }

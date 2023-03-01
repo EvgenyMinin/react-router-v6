@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Product } from '../../lib';
+import { Product } from '../../../../shared';
+
 import styles from './styles.module.css';
 
 type OwnProps = {
