@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
-import { Loader, Product } from '../../../../shared';
+import { Product } from '../../../../shared/lib';
+import { Loader } from '../../../../shared/ui';
 
 import { retrieveProduct } from '../../api';
 

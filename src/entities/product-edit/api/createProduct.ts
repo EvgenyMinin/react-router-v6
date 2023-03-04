@@ -19,7 +19,6 @@ export const createProduct = async (payload: Omit<Product, 'id'>) => {
 };
 
 export const updateProduct = async (payload: Product) => {
-  console.log('payload', payload);
   const response = await fetch(`/api/products/${payload.id}`, {
     method: 'PUT',
     headers: {
@@ -29,7 +28,6 @@ export const updateProduct = async (payload: Product) => {
   });
 
   if (response.ok) {
-    console.log('response', response);
     return await response.json();
   }
 

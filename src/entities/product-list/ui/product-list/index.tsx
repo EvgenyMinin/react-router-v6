@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Loader, Products } from '../../../../shared';
+import { Products } from '../../../../shared/lib';
+import { Loader } from '../../../../shared/ui';
 
 import { listProducts } from '../../api';
 import { ProductCard } from '../product-card';

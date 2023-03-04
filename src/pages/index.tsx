@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { APP_NAVIGATION, Navigation, ProtectedRoute } from '../shared';
+import { APP_NAVIGATION } from '../shared/lib';
+import { Navigation, ProtectedRoute } from '../shared/ui';
 
 import { AdminScreen } from './admin';
 import { NotFoundScreen } from './not-found';

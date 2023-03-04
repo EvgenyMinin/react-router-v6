@@ -16,12 +16,7 @@
   resize: none;
 }
 
-.button {
-  width: 100%;
-  padding: 6px;
-  background: none;
-  border: 2px solid #50fa7b;
-  background-color: #50fa7b;
-  border-radius: 6px;
-  color: #333;
+.buttonContainer {
+  display: flex;
+  gap: 16px;
 }

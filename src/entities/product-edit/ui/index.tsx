@@ -3,8 +3,10 @@ import { FC, SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { createProduct, updateProduct, getProduct } from '../api';
+import { ProductDelete } from '../../product-delete';
 
 import styles from './styles.module.css';
+import { SubmitButton } from '../../../shared/ui';
 
 type Form = {
   id: string;
@@ -112,13 +114,15 @@ export const ProductEdit: FC<OwnProps> = ({ isEdit }) => {
           updateField(target);
         }}
       />
-      <button
-        type="submit"
-        onClick={isEdit ? handleUpdate : handleCreate}
-        className={styles.button}
-      >
-        {isEdit ? 'Update' : 'Create'}
-      </button>
+
+      {!isEdit && <SubmitButton label="Create" onClick={handleCreate} />}
+
+      {isEdit && (
+        <div className={styles.buttonContainer}>
+          <SubmitButton label="Update" onClick={handleUpdate} />
+          <ProductDelete id={form.id} name={form.name} />
+        </div>
+      )}
     </form>
   );
 };
