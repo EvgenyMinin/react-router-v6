@@ -11,7 +11,7 @@ type OwnProps = {
 
 export const ProductCard: FC<OwnProps> = ({ product: { id, name, price } }) => {
   return (
-    <Link to={id} className={styles.container}>
+    <Link to={id.toString()} className={styles.container}>
       <h2 className={styles.name}>{name}</h2>
       <p className={styles.price}>{`$${price / 100}`}</p>
     </Link>

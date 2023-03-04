@@ -2,7 +2,7 @@ import { FC, SyntheticEvent, useEffect, useState } from 'react';
 
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { createProduct, getProduct } from '../api';
+import { createProduct, updateProduct, getProduct } from '../api';
 
 import styles from './styles.module.css';
 
@@ -70,6 +70,17 @@ export const ProductEdit: FC<OwnProps> = ({ isEdit }) => {
     }
   };
 
+  const handleUpdate = async (e: SyntheticEvent) => {
+    try {
+      e.preventDefault();
+      await updateProduct(form);
+      alert(`Updated ${form.name}`);
+      navigate('/admin');
+    } catch (error) {
+      console.warn(error);
+    }
+  };
+
   return (
     <form className={styles.form}>
       <input
@@ -101,8 +112,12 @@ export const ProductEdit: FC<OwnProps> = ({ isEdit }) => {
           updateField(target);
         }}
       />
-      <button type="submit" onClick={handleCreate} className={styles.button}>
-        Create
+      <button
+        type="submit"
+        onClick={isEdit ? handleUpdate : handleCreate}
+        className={styles.button}
+      >
+        {isEdit ? 'Update' : 'Create'}
       </button>
     </form>
   );
