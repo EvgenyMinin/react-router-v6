@@ -1,0 +1,20 @@
+.container {
+  margin-bottom: 16px;
+}
+
+.radioContainer {
+  display: flex;
+  align-items: center;
+}
+
+.radioContainer span {
+  width: 35px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.radioContainer label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
